@@ -362,7 +362,7 @@ PRIMARY KEY (`id`),
 
 INSERT INTO `news` (`id`, `title`, `slug`, `thumbnail`, `status`, `tags`, `seo_title`, `seo_description`, `content`, `createdAt`, `updatedAt`, `categoryId`, `subCategoryId`, `cityId`, `userId`, `template`) VALUES
 (19, 'The magic of Disney is landing in Abu Dhabi', NULL, 'http://localhost:8000/public/images/image1_1755713431754.jpg', 'draft', '', '', '', '<p>Get ready for a world of wonder, rides, and unforgettable experiences on Yas Island.<br><br><br></p><p>In a move set to redefine entertainment in the region, Disneyland has officially announced plans to open its first theme park in the Middle East – right on Yas Island in Abu Dhabi. Known for its world-class attractions like Ferrari World and Warner Bros. World, Yas Island will soon add another crown jewel to its entertainment lineup. Known for its world-class attractions like Ferrari World and WIndia and exploring opportunities for enhanced cooperation between the two countries.</p><p><br></p><p><br></p><p><br></p>', '2025-08-15 16:34:58', '2025-09-09 03:20:20', 2, 2, 5, 1, 'template1');
-INSERT INTO `news` (`id`, `title`, `slug`, `thumbnail`, `status`, `tags`, `seo_title`, `seo_description`, `content`, `createdAt`, `updatedAt`, `categoryId`, `subCategoryId`, `cityId`, `userId`, `template`) VALUES
+
 ;
 
 -- --------------------------------------------------------
