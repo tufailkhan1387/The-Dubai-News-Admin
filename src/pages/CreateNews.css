@@ -1,0 +1,7 @@
+.jodit-wysiwyg .instagram-media{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  min-height: 320px; /* gives the embed room before it hydrates */
+  margin:1rem 0 !important;
+}
