@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `ads` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
@@ -50,7 +50,7 @@ INSERT INTO `ads` (`id`, `title`, `image`, `createdAt`, `updatedAt`) VALUES
 --
 
 CREATE TABLE `articleAds` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `link` text NOT NULL,
@@ -73,7 +73,7 @@ INSERT INTO `articleAds` (`id`, `title`, `image`, `link`, `description`, `create
 --
 
 CREATE TABLE `articles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `excerpt` varchar(255) DEFAULT NULL,
@@ -115,7 +115,7 @@ INSERT INTO `articles` (`id`, `title`, `slug`, `excerpt`, `label`, `heroImage`, 
 --
 
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `cityId` int(11) DEFAULT NULL,
@@ -146,7 +146,7 @@ INSERT INTO `categories` (`id`, `name`, `status`, `cityId`, `color`, `createdAt`
 --
 
 CREATE TABLE `categoryAds` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
@@ -170,7 +170,7 @@ INSERT INTO `categoryAds` (`id`, `title`, `image`, `createdAt`, `updatedAt`, `li
 --
 
 CREATE TABLE `categoryMainSections` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` enum('first','second','third','fourth') DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -199,7 +199,7 @@ INSERT INTO `categoryMainSections` (`id`, `key`, `createdAt`, `updatedAt`, `news
 --
 
 CREATE TABLE `categoryTrendingNews` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `newsId` int(11) DEFAULT NULL,
@@ -228,7 +228,7 @@ INSERT INTO `categoryTrendingNews` (`id`, `createdAt`, `updatedAt`, `newsId`, `c
 --
 
 CREATE TABLE `cities` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `comming_soon` tinyint(1) DEFAULT NULL,
@@ -257,7 +257,7 @@ INSERT INTO `cities` (`id`, `name`, `image`, `comming_soon`, `createdAt`, `updat
 --
 
 CREATE TABLE `cityCategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `categoryId` int(11) DEFAULT NULL,
@@ -297,7 +297,7 @@ INSERT INTO `cityCategories` (`id`, `createdAt`, `updatedAt`, `categoryId`, `cit
 --
 
 CREATE TABLE `forgetPasswords` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `OTP` varchar(10) DEFAULT NULL,
   `requestedAt` datetime DEFAULT NULL,
   `expiryAt` datetime DEFAULT NULL,
@@ -327,7 +327,7 @@ INSERT INTO `forgetPasswords` (`id`, `OTP`, `requestedAt`, `expiryAt`, `createdA
 --
 
 CREATE TABLE `news` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `slug` text DEFAULT NULL,
   `thumbnail` longtext DEFAULT NULL,
@@ -389,7 +389,7 @@ INSERT INTO `news` (`id`, `title`, `slug`, `thumbnail`, `status`, `tags`, `seo_t
 --
 
 CREATE TABLE `pages` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `slug` varchar(255) DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
@@ -419,7 +419,7 @@ INSERT INTO `pages` (`id`, `name`, `slug`, `location`, `content`, `status`, `cre
 --
 
 CREATE TABLE `pinArticles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` enum('main','left','right') DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -442,7 +442,7 @@ INSERT INTO `pinArticles` (`id`, `key`, `createdAt`, `updatedAt`, `newsId`) VALU
 --
 
 CREATE TABLE `subCategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
@@ -472,7 +472,7 @@ INSERT INTO `subCategories` (`id`, `name`, `status`, `createdAt`, `updatedAt`, `
 --
 
 CREATE TABLE `subCategoryAds` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
   `link` text NOT NULL,
@@ -496,7 +496,7 @@ INSERT INTO `subCategoryAds` (`id`, `title`, `image`, `link`, `description`, `cr
 --
 
 CREATE TABLE `subCategoryMainNews` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` enum('first','second','third') DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -523,7 +523,7 @@ INSERT INTO `subCategoryMainNews` (`id`, `key`, `createdAt`, `updatedAt`, `newsI
 --
 
 CREATE TABLE `topPickArticles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` enum('topPicks','foodies','eyeout','budget') DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -571,7 +571,7 @@ INSERT INTO `topPickArticles` (`id`, `key`, `createdAt`, `updatedAt`, `newsId`) 
 --
 
 CREATE TABLE `trendingArticles` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` enum('main','left','right','leftSide') DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -595,7 +595,7 @@ INSERT INTO `trendingArticles` (`id`, `key`, `createdAt`, `updatedAt`, `newsId`)
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `profile_image` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
@@ -625,7 +625,7 @@ INSERT INTO `users` (`id`, `name`, `profile_image`, `role`, `email`, `password`,
 --
 
 CREATE TABLE `videos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(255) DEFAULT NULL,
   `video` text DEFAULT NULL,
   `title` text DEFAULT NULL,
